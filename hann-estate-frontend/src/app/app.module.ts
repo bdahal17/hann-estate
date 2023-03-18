@@ -16,6 +16,7 @@ import {HomeComponent} from "./utils/homeComponent/home.component";
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'map', component: MapComponent},
+  { path: 'about', component: MapComponent}
 ];
 
 @NgModule({

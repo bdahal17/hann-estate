@@ -7,7 +7,7 @@ import {ThemePalette} from "@angular/material/core";
   styleUrls: ['/app.component.css']
 })
 export class AppComponent {
-  links = ['home', 'map'];
+  links = ['home', 'map', 'about'];
   activeLink = this.links[0];
   background: ThemePalette = undefined;
   constructor() {
