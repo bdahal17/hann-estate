@@ -74,3 +74,4 @@ build/
 # System files
 /hann-estate-frontend/.DS_Store
 /hann-estate-frontend/Thumbs.db
+/hann-estate-frontend/package-lock.json
