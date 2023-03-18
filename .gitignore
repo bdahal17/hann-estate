@@ -31,3 +31,46 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/hann-estate-frontend/dist
+/hann-estate-frontend/tmp
+/hann-estate-frontend/out-tsc
+/hann-estate-frontend/bazel-out
+
+# Node
+/hann-estate-frontend/node_modules
+/hann-estate-frontend/npm-debug.log
+/hann-estate-frontend/yarn-error.log
+
+# IDEs and editors
+/hann-estate-frontend/.idea/
+/hann-estate-frontend/.project
+/hann-estate-frontend/.classpath
+/hann-estate-frontend/.c9/
+/hann-estate-frontend/*.launch
+/hann-estate-frontend/.settings/
+/hann-estate-frontend/*.sublime-workspace
+
+# Visual Studio Code
+/hann-estate-frontend/.vscode/*
+/hann-estate-frontend/!.vscode/settings.json
+/hann-estate-frontend/!.vscode/tasks.json
+/hann-estate-frontend/!.vscode/launch.json
+/hann-estate-frontend/!.vscode/extensions.json
+/hann-estate-frontend/.history/*
+
+# Miscellaneous
+/hann-estate-frontend/.angular/cache
+/hann-estate-frontend/.sass-cache/
+/hann-estate-frontend/connect.lock
+/hann-estate-frontend/coverage
+/hann-estate-frontend/libpeerconnection.log
+/hann-estate-frontend/testem.log
+/hann-estate-frontend/typings
+
+# System files
+/hann-estate-frontend/.DS_Store
+/hann-estate-frontend/Thumbs.db
