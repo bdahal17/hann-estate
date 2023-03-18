@@ -1,0 +1,37 @@
+.header {
+  background-color: black;
+  height: 20%;
+  width: 100%;
+  color: black;
+}
+.info_header {
+  background-color: gray;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation_links {
+  height: 30%;
+  background-color: aliceblue;
+  width: 100%;
+
+}
+.main {
+  background-color: cadetblue;
+  height: 80%;
+  width: 100%;
+}
+.name {
+  width: 80%;
+  height: 100%;
+}
+.contact_buttons {
+  width: 20%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
