@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, ViewContainerRef} from "@angular/core";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogComponent} from "../dialogComponent/dialog.component";
 
 @Component({
   styleUrls: ['map.component.css'],

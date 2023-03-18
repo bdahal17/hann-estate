@@ -8,3 +8,14 @@ body, html {
   width: 100%;
   height: 100vh;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cdk-overlay-container {
+  position: absolute;
+  height: auto;
+  width: auto;
+  z-index: 1;
+}

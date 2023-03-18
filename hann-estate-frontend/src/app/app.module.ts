@@ -12,6 +12,9 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { Routes, RouterModule } from '@angular/router';
 import {MapComponent} from "./utils/mapComponent/map.component";
 import {HomeComponent} from "./utils/homeComponent/home.component";
+import {DialogComponent} from "./utils/dialogComponent/dialog.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -23,7 +26,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MapComponent,
-    HomeComponent
+    HomeComponent,
+    DialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -35,6 +39,8 @@ const routes: Routes = [
     MatButtonModule,
     RouterModule.forRoot(routes),
     MatTabsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   exports: [RouterModule],
   providers: [],

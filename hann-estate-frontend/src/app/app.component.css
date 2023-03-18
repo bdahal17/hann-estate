@@ -35,3 +35,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
+.main_centered {
+  width: 100vw;
+  height: 100vh;
+}
