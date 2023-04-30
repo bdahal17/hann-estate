@@ -2,11 +2,11 @@ import {Component, Inject} from "@angular/core";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
-  templateUrl: 'dialog.component.html',
-  styleUrls: ['dialog.component.css']
+  templateUrl: 'callMe.component.html',
+  styleUrls: ['callMe.component.css']
 })
-export class DialogComponent {
-  constructor(private dialogRef: MatDialogRef<DialogComponent>) {
+export class CallMeComponent {
+  constructor(private dialogRef: MatDialogRef<CallMeComponent>) {
   }
   onNoClick() {
     this.dialogRef.close();

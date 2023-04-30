@@ -1,5 +1,7 @@
 package com.example.hannestate.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/home")
 public class HomeController {
     @GetMapping("/")
-    public String getHome() {
-        return "Success test";
+    public ResponseEntity<String> getHome() {
+        return new ResponseEntity<>("Success test", HttpStatus.OK);
     }
 }

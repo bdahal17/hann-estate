@@ -1,19 +1,17 @@
 <div class="main_centered">
-  <header class="header">
+  <header [class.newClass]="scrollDown" class="header">
     <div class="info_header">
       <div class="name">
-        <h1>Yadhap Adhikari</h1>
+        <img src="assets/logo1.png" alt="logo" class="logo">
       </div>
       <div class="contact_buttons">
-        <button [disabled]="clickedFlag" mat-stroked-button color="primary" (click)="openDialog()">Call Me</button>
-        <button mat-stroked-button color="primary">Email Me</button>
+        <button [disabled]="clickedFlag" mat-stroked-button color="primary" (click)="openDialog(ComponentType['dialog-component'])">Call Me</button>
+        <button [disabled]="clickedFlag" mat-stroked-button color="primary" (click)="openDialog(ComponentType['email-component'])">Email Me</button>
       </div>
     </div>
     <div class="navigation_links">
-      <nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
-        <a mat-tab-link *ngFor="let link of links"
-           (click)="activeLink = link"
-           [active]="activeLink == link" [routerLink]="link"> {{link}} </a>
+      <nav [style]="{}" mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
+        <a id="nav-links" mat-tab-link *ngFor="let link of links" [routerLink]="link"> {{link}} </a>
       </nav>
     </div>
   </header>

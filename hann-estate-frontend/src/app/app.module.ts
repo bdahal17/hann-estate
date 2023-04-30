@@ -10,16 +10,23 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatTabsModule} from "@angular/material/tabs";
 import { Routes, RouterModule } from '@angular/router';
-import {MapComponent} from "./utils/mapComponent/map.component";
-import {HomeComponent} from "./utils/homeComponent/home.component";
-import {DialogComponent} from "./utils/dialogComponent/dialog.component";
+import {MapComponent} from "./mapComponent/map.component";
+import {HomeComponent} from "./homeComponent/home.component";
+import {CallMeComponent} from "./callMeComponent/callMe.component";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import {EmailComponent} from "./emailComponent/email.component";
+import {DialogService} from "./services/dialog.service";
+import {EmailService} from "./services/email.service";
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
-  { path: 'map', component: MapComponent},
-  { path: 'about', component: MapComponent}
+  { path: '', redirectTo: 'Home', pathMatch: 'full'},
+  { path: 'Home', component: HomeComponent},
+  { path: 'Map', component: MapComponent},
+  { path: 'Testimonial', component: MapComponent}
 ];
 
 @NgModule({
@@ -27,23 +34,26 @@ const routes: Routes = [
     AppComponent,
     MapComponent,
     HomeComponent,
-    DialogComponent
+    CallMeComponent,
+    EmailComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
     MatNativeDateModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
     MatTabsModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    MatCardModule,
+    MatGridListModule,
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [DialogService, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

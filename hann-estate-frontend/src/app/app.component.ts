@@ -1,7 +1,15 @@
-import {Component, ViewContainerRef, inject} from '@angular/core';
+import {Component, ViewContainerRef, inject, HostListener, Renderer2, ElementRef, ViewChild} from '@angular/core';
 import {ThemePalette} from "@angular/material/core";
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {DialogComponent} from "./utils/dialogComponent/dialog.component";
+import {CallMeComponent} from "./callMeComponent/callMe.component";
+import {DialogService} from "./services/dialog.service";
+import {EmailComponent} from "./emailComponent/email.component";
+import {MapComponent} from "./mapComponent/map.component";
+import {HomeComponent} from "./homeComponent/home.component";
+import {DialogData} from "./Types/Dialog";
+import {Email} from "./Types/Email";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,26 +18,52 @@ import {DialogComponent} from "./utils/dialogComponent/dialog.component";
 })
 export class AppComponent {
   clickedFlag: boolean = false;
-  links = ['home', 'map', 'about'];
+  links = ['Home', 'Map', 'Testimonial'];
   activeLink = this.links[0];
   background: ThemePalette = undefined;
 
-  animal: string = 'animal1';
-  constructor(private dialog: MatDialog) {
-  }
-  openDialog() {
-    const dialogOpened = this.dialog.open(DialogComponent, {
-      width: '400px',
-      height: '200px'
-    });
-    dialogOpened.afterOpened().subscribe(() => {
-      this.clickedFlag = true;
-      console.log("call me disabled")
-    })
-    dialogOpened.afterClosed().subscribe(() => {
-      this.clickedFlag = false;
-    })
+ emailData: Email = {
+   email: "", message: "", name: ""
+ }
 
+ scrollDown: boolean = false;
+
+  ComponentType = {
+    'email-component': EmailComponent,
+    'dialog-component': CallMeComponent,
+    'app-root': AppComponent,
+    'map-component': MapComponent,
+    'home-component': HomeComponent,
+  }
+  private previousPosition: number = 0;
+
+  constructor(private dialog: MatDialog, private dialogService: DialogService,
+              private router: Router, private dom: Renderer2, private ele: ElementRef) {
   }
 
+  ngOnInit() {
+   // this.openDialog(this.ComponentType["email-component"]);
+  }
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e: Event) {
+    if(this.previousPosition < window.scrollY) {
+      this.scrollDown = true;
+      console.log("scrolling down")
+
+    } else {
+      this.scrollDown = false;
+      console.log("scrolling up")
+    }
+    this.previousPosition = window.scrollY;
+  }
+
+  openDialog(component: any) {
+    this.dialogService.openDialog(component, {name: 'est', data: {
+        emailData: this.emailData,
+        phoneNumber: '1234567890'
+      }, config: {
+        width: '600px',
+        height: '300px',
+      }});
+  }
 }

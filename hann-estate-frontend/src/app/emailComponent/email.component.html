@@ -1,0 +1,23 @@
+<form class="email-form" [formGroup]="formGroup" (ngSubmit)="logSomething()">
+  <div class="top-email-form">
+    <mat-form-field appearance="fill">
+      <label>Full Name</label>
+      <input id="fullname-input" matInput formControlName="fullName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label id="email-label">Email Address</label>
+      <input id="email-input" matInput type="email" formControlName="email" required>
+    </mat-form-field>
+  </div>
+  <div class="bottom-email-form">
+
+  <mat-form-field floatLabel="always" id="email-textarea-form" appearance="fill">
+    <label id="textarea-label">Message</label>
+    <textarea rows="4" matInput id="email-textarea" formControlName="message" required></textarea>
+  </mat-form-field>
+  </div>
+  <button id="email-button" mat-raised-button color="primary" type="submit" [disabled]="!formGroup.valid">
+    Submit
+  </button>
+</form>

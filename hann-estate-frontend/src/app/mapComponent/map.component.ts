@@ -1,6 +1,6 @@
 import {Component, ViewContainerRef} from "@angular/core";
 import {MatDialog} from "@angular/material/dialog";
-import {DialogComponent} from "../dialogComponent/dialog.component";
+import {CallMeComponent} from "../callMeComponent/callMe.component";
 
 @Component({
   styleUrls: ['map.component.css'],
