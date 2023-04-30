@@ -1,0 +1,41 @@
+#home_image {
+  height: auto;
+  /*max-width: 100%;*/
+  width: 100%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.grid-list {
+  background-color: whitesmoke;
+}
+
+.home_container {
+}
+.mat-card {
+  width: 90%;
+  height: 90%;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.image_container {
+  width: 100%;
+  height: 800px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
